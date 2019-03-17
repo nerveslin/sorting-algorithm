@@ -3,11 +3,11 @@
 #include <iostream>
 using namespace std;
 
-void quickSort1(int* array, int begin, int end) //алгоритм быстрой сортировки в возрастающем порядке
+void quickSort1(int* array, int begin, int end) //Р°Р»РіРѕСЂРёС‚Рј Р±С‹СЃС‚СЂРѕР№ СЃРѕСЂС‚РёСЂРѕРІРєРё РїРѕ СѓР±С‹РІР°РЅРёРёСЋ
 {
-	int pivot = array[begin]; //инициализация опорного элемента
-	int start = begin; //начальный элемент
-	int finish = end; //конечный элемент
+	int pivot = array[begin]; //РёРЅРёС†РёР°Р»РёР·Р°С†РёСЏ РѕРїРѕСЂРЅРѕРіРѕ СЌР»РµРјРµРЅС‚Р°
+	int start = begin; 
+	int finish = end; 
 
 	while (begin < end)
 	{
@@ -38,12 +38,12 @@ void quickSort1(int* array, int begin, int end) //алгоритм быстрой сортировки в 
 	if (end > pivot) quickSort1(array, pivot + 1, end);
 }
 
-void quickSort2(int* array, int begin, int end) //алгоритм быстрой сортировки в убывающем порядке
+void quickSort2(int* array, int begin, int end) //Р°Р»РіРѕСЂРёС‚Рј Р±С‹СЃС‚СЂРѕР№ СЃРѕСЂС‚РёСЂРѕРІРєРё РїРѕ СѓР±С‹РІР°РЅРёСЋ
 {
 
-	int pivot = array[begin]; //инициализация опорного элемента
-	int start = begin; //начальный элемент
-	int finish = end; //конечный элемент
+	int pivot = array[begin]; 
+	int start = begin; 
+	int finish = end; 
 
 	while (begin < end)
 	{
@@ -78,27 +78,27 @@ void main()
 {
 	setlocale(LC_ALL, "RUS");
 
-	cout << "Введите количество элементов в массиве: ";
+	cout << "Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЌР»РµРјРµРЅС‚РѕРІ РІ РјР°СЃСЃРёРІРµ: ";
 	int N;
 	cin >> N;
 
-	cout << "Введите элементы массива: ";
-	int *array; //выделение памяти под массив
+	cout << "Р’РІРµРґРёС‚Рµ СЌР»РµРјРµРЅС‚С‹ РјР°СЃСЃРёРІР°: ";
+	int *array; 
 	array = new int[N];
-	int odd = 0; //счет нечетных чисел
-	int even = 0; //счет четных чисел
+	int odd = 0; 
+	int even = 0; 
 	for (int i = 0; i < N; i++)
 	{
-		cin >> array[i]; //введение элементов массива пользователем
+		cin >> array[i]; 
 
 		if (array[i] % 2 != 0) odd++;
 		else even++;
 	}
 
 	int *evenArray;
-	evenArray = new int[even]; //массив четных чисел
+	evenArray = new int[even]; 
 	int *oddArray;
-	oddArray = new int[odd]; //массив нечетных чисел
+	oddArray = new int[odd]; 
 	int k = 0;
 	int j = 0;
 
@@ -125,7 +125,7 @@ void main()
 	for (int i = 0; i < even; i++) cout << evenArray[i] << " ";
 	for (int i = 0; i < odd; i++) cout << oddArray[i] << " ";
 
-	delete[] array; //освобождение памяти, выделенной под массив
+	delete[] array; //РѕСЃРІРѕР±РѕР¶РґРµРЅРёРµ РїР°РјСЏС‚Рё, РІС‹РґРµР»РµРЅРЅРѕР№ РїРѕРґ РјР°СЃСЃРёРІ
 	delete[] evenArray;
 	delete[] oddArray;
 }
